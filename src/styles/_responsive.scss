@@ -1,0 +1,93 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Mobile-specific overrides
+@include mobile {
+  // Reduce spacing for mobile
+  .hero-section {
+    padding: $space-lg $space-md;
+  }
+
+  .cellar-section,
+  .experience-section,
+  .membership-section,
+  .cta-section {
+    padding: $space-xl 0;
+  }
+
+  // Stack grids
+  .cellar-container,
+  .experience-grid {
+    gap: $space-lg;
+  }
+
+  // Reduce image heights
+  .cellar-image {
+    height: 400px;
+  }
+
+  .experience-image {
+    height: 300px;
+  }
+
+  // Form adjustments
+  .form-group {
+    margin-bottom: $space-md;
+  }
+
+  .submit-button {
+    height: 48px;
+    font-size: 13px;
+  }
+}
+
+// Tablet-specific overrides
+@include tablet {
+  .cellar-container {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+  // Scroll-based parallax is disabled in JS (initParallax early-returns on touch devices).
+  // 3D tilt parallax via the accelerometer (initMobileParallax) replaces it instead.
+
+  // Increase touch target sizes
+  .scroll-indicator,
+  .submit-button,
+  input:not([type="checkbox"]),
+  textarea {
+    min-height: 44px;
+  }
+
+  // Disable hover effects
+  .submit-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+// Reduce motion for accessibility
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .parallax-image {
+    transform: none !important;
+  }
+
+  .whisper-char {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

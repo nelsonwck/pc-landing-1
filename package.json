@@ -1,0 +1,17 @@
+{
+  "name": "prime-collective-website",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "sass": "^1.69.5",
+    "terser": "^5.46.1",
+    "vite": "^5.0.8"
+  }
+}

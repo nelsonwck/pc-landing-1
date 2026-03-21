@@ -1,0 +1,22 @@
+// Main stylesheet entry point
+@use './variables' as *;
+@use './mixins' as *;
+
+// Partials will be added as they are created:
+@use './typography' as *;
+@use './animations' as *;
+@use './sections' as *;
+@use './responsive' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-body;
+  background-color: $deep-black;
+  color: $cream;
+  overflow-x: hidden;
+}

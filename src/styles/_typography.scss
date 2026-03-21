@@ -1,0 +1,125 @@
+// Font Face Declarations
+@font-face {
+  font-family: 'Agatho';
+  src: url('../assets/fonts/agatho/agatho-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho';
+  src: url('../assets/fonts/agatho/agatho-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orpheus Pro';
+  src: url('../assets/fonts/orpheus-pro/orpheus-pro-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Typography Styles
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Agatho', serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 64px;
+  letter-spacing: 0.12em;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  letter-spacing: 0.10em;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+h3 {
+  font-size: 32px;
+  letter-spacing: 0.08em;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  letter-spacing: 0.06em;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+p, body {
+  font-family: 'Orpheus Pro', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.body-large {
+  font-size: 18px;
+  line-height: 1.7;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.body-regular {
+  font-size: 16px;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.body-small {
+  font-size: 14px;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+}
+
+.whisper {
+  font-family: 'Orpheus Pro', Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.button-text {
+  font-family: 'Agatho', serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,54 @@
+// Color Palette
+// Brand Colors
+$prime-gold: #AF862D;
+$black: #000000;
+$white: #FFFFFF;
+
+// Extended Dark Luxury Palette
+$deep-black: #0A0A0A;
+$rich-charcoal: #1A1A1A;
+$carbon: #2D2D2D;
+$bright-gold: #D4AF37;
+$aged-gold: #8B7023;
+$cream: #F5F5F0;
+$silver: #B8B8B8;
+$slate: #666666;
+
+// Spacing System (base unit: 8px)
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 48px;
+$space-xl: 80px;
+$space-xxl: 120px;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1440px;
+
+// Layout
+$max-content-width: 1400px;
+$grid-gutter-desktop: 32px;
+$grid-gutter-tablet: 24px;
+$grid-gutter-mobile: 16px;
+
+// Typography
+$font-heading: 'Agatho', serif;
+$font-body: 'Orpheus Pro', Georgia, serif;
+
+// Transitions
+$transition-fast: 0.15s ease-in-out;
+$transition-base: 0.3s ease-out;
+$transition-slow: 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+$transition-reveal: 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+// Z-index scale
+$z-base: 1;
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-fixed: 300;
+$z-modal-backdrop: 400;
+$z-modal: 500;
+$z-tooltip: 600;

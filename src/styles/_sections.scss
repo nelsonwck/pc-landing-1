@@ -1,0 +1,663 @@
+// Section-specific styles
+// Will contain Hero, Cellar, Experience, Membership, CTA, Footer styles
+@use './variables' as *;
+@use './mixins' as *;
+
+section {
+  width: 100%;
+  position: relative;
+}
+
+// Hero Section
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $deep-black;
+  padding: $space-xl $space-md;
+  overflow: hidden;
+
+  // Background grain texture effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+    pointer-events: none;
+    z-index: $z-base + 1;
+  }
+}
+
+// Parallax background layer for the hero
+.hero-bg {
+  position: absolute;
+  // Oversized so movement doesn't reveal edges
+  top: -8%;
+  left: -8%;
+  width: 116%;
+  height: 116%;
+  background: linear-gradient(135deg, rgba($deep-black, 0.7) 100%, rgba($rich-charcoal, 0.5) 50%, rgba($deep-black, 0.7) 100%),
+    url('../assets/images/main-hero.jpeg') center center / cover no-repeat;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: $z-base + 1;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-logo {
+  width: 160px;
+  // height: 60px;
+  margin-bottom: $space-md;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+
+  @include mobile {
+    width: 120px;
+    // height: 40px;
+  }
+}
+
+.hero-headline {
+  color: $prime-gold;
+  margin-bottom: $space-md;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out 0.2s forwards;
+}
+
+.hero-subheadline {
+  font-size: 24px;
+  color: $cream;
+  margin-bottom: $space-sm;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+
+  @include mobile {
+    font-size: 18px;
+  }
+}
+
+.hero-tagline {
+  font-size: 16px;
+  color: $silver;
+  margin-bottom: $space-lg;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.7s forwards;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.hero-whisper {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 1.2s forwards;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: $space-lg;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $prime-gold;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity $transition-base;
+  z-index: $z-base + 1;
+  background: none;
+  border: none;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include mobile {
+    bottom: $space-md;
+  }
+}
+
+// Keyframe animations
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// The Cellar Section
+.cellar-section {
+  background-color: $rich-charcoal;
+  padding: $space-xxl 0;
+
+  @include mobile {
+    padding: $space-xl 0;
+  }
+}
+
+.cellar-container {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-xl;
+  align-items: center;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+  }
+}
+
+.cellar-image {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 8px;
+  transform-origin: center center;
+
+  @include mobile {
+    height: 400px;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, $carbon 0%, $deep-black 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $slate;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid $carbon;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+}
+
+.cellar-content {
+  .section-title {
+    color: $prime-gold;
+    margin-bottom: $space-lg;
+  }
+
+  p.body-regular {
+    color: $cream;
+    margin-bottom: $space-md;
+
+    &:last-of-type {
+      margin-bottom: $space-lg;
+    }
+  }
+}
+
+.producer-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  margin-bottom: $space-lg;
+  padding-top: $space-md;
+  border-top: 1px solid $carbon;
+
+  span {
+    font-size: 12px;
+    color: $slate;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &:not(:last-child)::after {
+      content: '|';
+      margin-left: $space-md;
+      color: $carbon;
+    }
+  }
+
+  @include mobile {
+    gap: $space-sm;
+
+    span {
+      font-size: 11px;
+
+      &:not(:last-child)::after {
+        margin-left: $space-sm;
+      }
+    }
+  }
+}
+
+// Experience Section
+.experience-section {
+  background-color: $deep-black;
+  padding: $space-xxl 0;
+
+  @include mobile {
+    padding: $space-xl 0;
+  }
+}
+
+.experience-container {
+  @include container;
+}
+
+.section-title.center,
+.intro.center,
+.whisper.center {
+  text-align: center;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto $space-xl auto;
+  color: $cream;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-xl;
+  margin-bottom: $space-xl;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+  }
+}
+
+.experience-column {
+  text-align: center;
+
+  h4 {
+    color: $bright-gold;
+    margin-bottom: $space-md;
+  }
+
+  .body-small {
+    color: $cream;
+  }
+}
+
+.column-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: $space-md;
+  background: linear-gradient(135deg, $carbon 0%, $deep-black 100%);
+  border: 1px solid $carbon;
+  transform-origin: center center;
+
+  @include mobile {
+    // height: 180px;
+  }
+
+  img {
+    position: absolute;
+    top: -30%;
+    left: 0;
+    width: 100%;
+    height: 160%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+}
+
+.experience-image {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  margin: 0 auto $space-lg auto;
+  overflow: hidden;
+  border-radius: 8px;
+  transform-origin: center center;
+
+  @include mobile {
+    height: 300px;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, $carbon 0%, $deep-black 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $slate;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid $carbon;
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+}
+
+// Membership Section
+.membership-section {
+  background-color: $rich-charcoal;
+  padding: $space-xxl * 1.5 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/logo/pc-logo-monogram.svg');
+    background-repeat: repeat;
+    background-size: 160px 160px;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @include mobile {
+    padding: $space-xl 0;
+  }
+}
+
+.membership-container {
+  @include container;
+  max-width: 800px;
+}
+
+.membership-content {
+  margin: $space-xl 0;
+
+  .body-large {
+    color: $cream;
+    margin-bottom: $space-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.scarcity-line {
+  font-size: 14px;
+  color: $bright-gold;
+  margin-top: $space-xl;
+  margin-bottom: $space-md;
+  font-weight: 500;
+}
+
+// CTA / Lead Capture Section
+.cta-section {
+  background-color: $deep-black;
+  padding: $space-xxl 0;
+
+  @include mobile {
+    padding: $space-xl 0;
+  }
+}
+
+.cta-container {
+  @include container;
+  max-width: 600px;
+  text-align: center;
+
+  .section-title {
+    font-size: 36px;
+    margin-bottom: $space-md;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  > .body-regular {
+    margin-bottom: $space-sm;
+  }
+}
+
+// Form Styles
+.membership-form {
+  text-align: left;
+  margin-top: $space-sm;
+}
+
+.form-group {
+  margin-bottom: $space-sm;
+
+  label {
+    display: block;
+    font-family: $font-body;
+    font-size: 14px;
+    color: $silver;
+    margin-bottom: $space-xs;
+    letter-spacing: 0.02em;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: $space-xs;
+    background-color: $rich-charcoal;
+    border: 1px solid $carbon;
+    border-radius: 4px;
+    color: $cream;
+    font-family: $font-body;
+    font-size: 16px;
+    transition: border-color $transition-base, box-shadow $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $prime-gold;
+      box-shadow: 0 0 0 3px rgba($prime-gold, 0.1);
+    }
+    &:focus-visible {
+      outline: 2px solid $prime-gold;
+      outline-offset: 2px;
+    }
+
+    &::placeholder {
+      color: $slate;
+    }
+
+    &.error {
+      border-color: #D32F2F;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .error-message {
+    display: block;
+    margin-top: $space-xs;
+    font-size: 12px;
+    color: #D32F2F;
+  }
+}
+
+.checkbox-group {
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-sm;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-top: 4px;
+      flex-shrink: 0;
+      cursor: pointer;
+      accent-color: $prime-gold;
+    }
+
+    span {
+      font-size: 13px;
+      color: $silver;
+      line-height: 1.5;
+    }
+  }
+}
+
+.submit-button {
+  width: 100%;
+  height: 56px;
+  background-color: $prime-gold;
+  color: $deep-black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow $transition-base, transform $transition-fast;
+  margin-top: $space-lg;
+
+  &:hover:not(:disabled) {
+    @include gold-glow;
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @include mobile {
+    height: 48px;
+  }
+}
+
+.form-microtext {
+  font-size: 11px;
+  color: $slate;
+  text-align: center;
+  margin-top: $space-md;
+}
+
+.form-success,
+.form-error {
+  margin-top: $space-lg;
+  padding: $space-md;
+  border-radius: 4px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.form-success {
+  background-color: rgba(#4CAF50, 0.1);
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
+}
+
+.form-error {
+  background-color: rgba(#D32F2F, 0.1);
+  border: 1px solid #D32F2F;
+  color: #D32F2F;
+}
+
+// Footer
+.footer {
+  background-color: $deep-black;
+  border-top: 1px solid $carbon;
+  padding: $space-xl 0;
+
+  @include mobile {
+    padding: $space-lg 0;
+  }
+}
+
+.footer-content {
+  @include container;
+  text-align: center;
+
+  .footer-logo {
+    width: 120px;
+    margin-bottom: $space-md;
+  }
+
+  p {
+    font-family: $font-body;
+    font-size: 12px;
+    color: $slate;
+    line-height: 2;
+    margin: 0;
+  }
+
+  .footer-brand {
+    font-family: $font-heading;
+    font-size: 14px;
+    color: $prime-gold;
+    letter-spacing: 0.1em;
+    margin-bottom: $space-sm;
+  }
+
+  .footer-copyright {
+    margin-top: $space-md;
+    font-size: 11px;
+    opacity: 0.5;
+  }
+
+  @include mobile {
+    p {
+      font-size: 11px;
+    }
+  }
+}
+
+// Parallax image optimization
+.parallax-image {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}

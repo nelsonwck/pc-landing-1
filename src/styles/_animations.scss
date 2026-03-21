@@ -1,0 +1,64 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Animation keyframes and classes
+// To be populated with scroll animations, parallax, whisper reveals
+
+.fade-in {
+  @include fade-in;
+}
+
+// Scroll indicator animation
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+// Fade-in animation classes (scroll-triggered)
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity $transition-slow, transform $transition-slow;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-stagger {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity $transition-slow, transform $transition-slow;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Stagger delays for child elements
+@for $i from 1 through 10 {
+  .fade-in-stagger:nth-child(#{$i}) {
+    transition-delay: #{$i * 0.1}s;
+  }
+}
+
+// Whisper character reveal animation
+.whisper-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
