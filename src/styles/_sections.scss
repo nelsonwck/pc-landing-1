@@ -100,6 +100,34 @@ section {
   }
 }
 
+.hero-cta-btn {
+  display: inline-block;
+  margin-top: $space-sm;
+  padding: 14px 36px;
+  border: 1px solid $prime-gold;
+  color: $prime-gold;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background $transition-base, color $transition-base;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 1s forwards;
+
+  &:hover {
+    background: $prime-gold;
+    color: $deep-black;
+  }
+
+  @include mobile {
+    padding: 12px 28px;
+    font-size: 11px;
+  }
+}
+
 .hero-whisper {
   opacity: 0;
   animation: fadeIn 0.8s ease-out 1.2s forwards;
@@ -215,7 +243,7 @@ section {
     color: $cream;
     margin-bottom: $space-md;
 
-    &:last-of-type {
+    .last-of-p {
       margin-bottom: $space-lg;
     }
   }
@@ -241,6 +269,14 @@ section {
       margin-left: $space-md;
       color: $carbon;
     }
+  }
+
+  .subtitle {
+    color: $aged-gold;
+    text-transform: none;
+    margin-bottom: $space-md;
+    clear:both;
+    width: 100%;
   }
 
   @include mobile {
@@ -522,27 +558,12 @@ section {
   }
 }
 
-.checkbox-group {
-  .checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: $space-sm;
-    cursor: pointer;
-
-    input[type="checkbox"] {
-      width: auto;
-      margin-top: 4px;
-      flex-shrink: 0;
-      cursor: pointer;
-      accent-color: $prime-gold;
-    }
-
-    span {
-      font-size: 13px;
-      color: $silver;
-      line-height: 1.5;
-    }
-  }
+.form-disclaimer {
+  font-size: 13px;
+  color: $slate;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: $space-sm;
 }
 
 .submit-button {

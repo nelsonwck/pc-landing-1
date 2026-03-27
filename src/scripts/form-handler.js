@@ -14,13 +14,6 @@ const validators = {
     return null;
   },
 
-  email: (value) => {
-    if (!value.trim()) return 'Please enter your email address';
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) return 'Please enter a valid email address';
-    return null;
-  },
-
   phone: (value) => {
     if (!value.trim()) return 'Please enter your mobile number';
     const phoneRegex = /^[\d\s\-\(\)\+]+$/;
@@ -30,16 +23,6 @@ const validators = {
     return null;
   },
 
-  company: (value) => {
-    if (!value.trim()) return 'Please enter your company or occupation';
-    if (value.trim().length < 2) return 'Please provide more detail';
-    return null;
-  },
-
-  consent: (checked) => {
-    if (!checked) return 'You must consent to be contacted';
-    return null;
-  }
 };
 
 // Show error message
@@ -79,7 +62,7 @@ const validateField = (fieldName) => {
 
 // Validate entire form
 const validateForm = () => {
-  const fields = ['name', 'email', 'phone', 'company', 'consent'];
+  const fields = ['name', 'phone'];
   let isValid = true;
 
   fields.forEach(field => {
@@ -93,7 +76,7 @@ const validateForm = () => {
 
 // Real-time validation on blur
 if (form) {
-  ['name', 'email', 'phone', 'company'].forEach(fieldName => {
+  ['name', 'phone'].forEach(fieldName => {
     const field = document.getElementById(fieldName);
     if (field) {
       field.addEventListener('blur', () => validateField(fieldName));
@@ -105,10 +88,6 @@ if (form) {
     }
   });
 
-  const consentCheckbox = document.getElementById('consent');
-  if (consentCheckbox) {
-    consentCheckbox.addEventListener('change', () => validateField('consent'));
-  }
 }
 
 export { validateForm, validateField, showError, clearError };
@@ -149,11 +128,8 @@ const sendEmailViaResend = async (formData) => {
     <body>
       <h2>New Membership Inquiry - Prime Collective</h2>
       <div class="field"><div class="label">Name:</div><div>${escapeHtml(formData.name)}</div></div>
-      <div class="field"><div class="label">Email:</div><div>${escapeHtml(formData.email)}</div></div>
       <div class="field"><div class="label">Phone:</div><div>${escapeHtml(formData.phone)}</div></div>
-      <div class="field"><div class="label">Company/Occupation:</div><div>${escapeHtml(formData.company)}</div></div>
-      <div class="field"><div class="label">Interest in Wine:</div><div>${escapeHtml(formData.interest || 'Not provided')}</div></div>
-      <div class="field"><div class="label">Consent Given:</div><div>${formData.consent ? 'Yes' : 'No'}</div></div>
+      <div class="field"><div class="label">Wine Preferences:</div><div>${escapeHtml(formData.interest || 'Not provided')}</div></div>
       <div class="field"><div class="label">Submitted:</div><div>${new Date().toLocaleString()}</div></div>
       <hr>
       <p class="footer">This inquiry was submitted via the Prime Collective landing page.</p>
@@ -197,11 +173,8 @@ const sendToGoogleSheets = async (formData) => {
   const payload = {
     timestamp: new Date().toISOString(),
     name: formData.name,
-    email: formData.email,
     phone: formData.phone,
-    company: formData.company,
-    interest: formData.interest || '',
-    consent: formData.consent ? 'Yes' : 'No'
+    interest: formData.interest || ''
   };
 
   await fetch(sheetsUrl, {

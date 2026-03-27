@@ -27,10 +27,9 @@
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-content">
       <img src="./assets/logo/pc-logo-stacked.svg" alt="Prime Collective" class="hero-logo" loading="eager">
-      <!-- <h1 class="hero-headline">Prime Collective</h1> -->
       <p class="hero-subheadline">A Private World of Wine</p>
       <p class="hero-tagline">Reserved for the Few.</p>
-      <p class="whisper hero-whisper">Not every bottle is meant for public lists.</p>
+      <a href="#cta" class="hero-cta-btn">REQUEST MEMBERSHIP</a>
     </div>
     <button class="scroll-indicator" aria-label="Scroll down" type="button">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,19 +46,19 @@
       </div>
       <div class="cellar-content">
         <h2 class="section-title fade-in-element">The Region's Most Remarkable Cellar</h2>
-        <p class="body-regular fade-in-stagger">Within our cellar lies a curated collection of over 10,000 bottles across more than 1,500 labels, sourced from some of the world's most respected vineyards.</p>
-        <p class="body-regular fade-in-stagger">From Napa Valley icons to historic Bordeaux estates, the cellar represents rarity, provenance, and legacy.</p>
-        <p class="body-regular fade-in-stagger">Many of these allocations are reserved exclusively for members.</p>
+        <p class="body-regular fade-in-stagger">Within our cellar lies a curated collection of over 10,000 bottles across more than 1,500 labels, sourced from some of the world’s most revered vineyards.</p>
+        <p class="body-regular fade-in-stagger">From Napa Valley icons to historic Bordeaux estates, the cellar reflects rarity, provenance, and quiet prestige.</p>
+        <p class="body-regular fade-in-stagger last-p">Many of these allocations are never publicly listed — reserved exclusively for members of the Collective.</p>
 
         <div class="producer-strip fade-in-element">
-          <span>Screaming Eagle</span>
-          <span>Chateau Petrus</span>
-          <span>Chateau Montelena</span>
-          <span>Opus One</span>
-          <span>Rombauer</span>
+          <p class="subtitle">A global cellar, spanning the world's most sought-after regions:</p>
+          <span>Burgundy Grand Crus</span>
+          <span>Bordeaux First Growths</span>
+          <span>Napa Valley Cult Estates</span>
+          <span>Super Tuscans</span>
+          <span>Champagne Prestige Cuvées</span>
+          <span>Rare and Limited Allocations</span>
         </div>
-
-        <p class="whisper">Some cellars are inherited. The finest are assembled, with a clear vision in mind.</p>
       </div>
     </div>
   </section>
@@ -74,12 +73,12 @@
         <div class="experience-column fade-in-stagger">
           <h4>Private Dinners</h4>
           <div class="column-image"><img src="./assets/images/private-dinners.jpg" alt="Private Dinners" class="parallax-image" data-parallax-speed="0.1"></div>
-          <p class="body-small">Rare wine pairings with renowned chefs and visiting producers.</p>
+          <p class="body-small">Rare wine pairings with renowned chefs and visiting producers — intimate, curated, and by invitation</p>
         </div>
         <div class="experience-column fade-in-stagger">
           <h4>Sommelier Curation</h4>
           <div class="column-image"><img src="./assets/images/sommelier-curation.jpg" alt="Sommelier Curation" class="parallax-image" data-parallax-speed="0.1"></div>
-          <p class="body-small">Access to limited allocations and expert recommendations from our sommelier team.</p>
+          <p class="body-small">Access to limited allocations and tailored recommendations from our sommelier team.</p>
         </div>
         <div class="experience-column fade-in-stagger">
           <h4>The Prime Salon</h4>
@@ -124,42 +123,22 @@
         </div>
 
         <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required aria-required="true">
-          <span class="error-message" id="email-error"></span>
-        </div>
-
-        <div class="form-group">
           <label for="phone">Mobile Number *</label>
           <input type="tel" id="phone" name="phone" required aria-required="true">
           <span class="error-message" id="phone-error"></span>
         </div>
 
         <div class="form-group">
-          <label for="company">Company / Occupation *</label>
-          <input type="text" id="company" name="company" required aria-required="true">
-          <span class="error-message" id="company-error"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="interest">Tell us about your interest in wine (optional)</label>
+          <label for="interest">Tell us about your wine preferences (optional)</label>
           <textarea id="interest" name="interest" rows="4"></textarea>
         </div>
 
-        <div class="form-group checkbox-group">
-          <label class="checkbox-label">
-            <input type="checkbox" id="consent" name="consent" required aria-required="true">
-            <span>I consent to being contacted by Prime Collective regarding membership information. Your details will be used only for membership communications and will not be shared with third parties.</span>
-          </label>
-          <span class="error-message" id="consent-error"></span>
-        </div>
+        <p class="form-disclaimer">Your details will be used solely for membership communication and handled with strict confidentiality.</p>
 
         <button type="submit" class="submit-button button-text">
           <span class="button-label">Request Membership</span>
           <span class="button-loading" style="display: none;">Submitting...</span>
         </button>
-
-        <p class="form-microtext">All enquiries are treated with strict confidentiality.</p>
 
         <div class="form-success" id="form-success" role="alert" style="display: none;">
           <p>Thank you for your interest. We will be in touch shortly.</p>
@@ -175,12 +154,9 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <img class="footer-logo" src="./assets/logo/pc-logo-horizontal.svg" alt="Prime Collective Logo">
-      <!-- <p class="footer-brand">PRIME COLLECTIVE</p> -->
-      <p class="footer-location">Smith &amp; Wollensky Kuala Lumpur</p>
-      <!-- <p class="footer-tagline">Private Wine Collective</p> -->
-      <!-- <p class="footer-management">Managed by Booze Brothers</p> -->
-      <p class="footer-copyright">&copy; 2026 Prime Collective. All rights reserved.</p>
+      <img class="footer-logo" src="./assets/logo/pc-logo-horizontal.svg" alt="Prime Collective">
+      <p class="footer-management">Managed by Booze Brothers</p>
+      <p class="footer-copyright">&copy; 2026 Booze Brothers. All rights reserved.</p>
     </div>
   </footer>
 

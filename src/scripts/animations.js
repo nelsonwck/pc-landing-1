@@ -55,6 +55,48 @@ if (scrollIndicator) {
   });
 }
 
+// Luxurious smooth scroll matching $transition-reveal: cubic-bezier(0.4, 0.0, 0.2, 1)
+const luxuryScrollTo = (targetY, duration = 1200) => {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+
+  // Solves cubic-bezier(x1,y1,x2,y2) at a given progress value
+  // using binary search to find t where sampleX(t) = progress, then returns sampleY(t)
+  const cubicBezierEase = (progress) => {
+    const x1 = 0.4, y1 = 0.0, x2 = 0.2, y2 = 1.0;
+    const sampleX = (t) => 3 * x1 * t * (1 - t) ** 2 + 3 * x2 * t ** 2 * (1 - t) + t ** 3;
+    const sampleY = (t) => 3 * y1 * t * (1 - t) ** 2 + 3 * y2 * t ** 2 * (1 - t) + t ** 3;
+    let lo = 0, hi = 1;
+    for (let i = 0; i < 14; i++) {
+      const mid = (lo + hi) / 2;
+      sampleX(mid) < progress ? (lo = mid) : (hi = mid);
+    }
+    return sampleY((lo + hi) / 2);
+  };
+
+  let startTime = null;
+  const step = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + distance * cubicBezierEase(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+};
+
+const heroCta = document.querySelector('.hero-cta-btn');
+if (heroCta) {
+  heroCta.addEventListener('click', (e) => {
+    e.preventDefault();
+    const ctaSection = document.getElementById('cta');
+    if (ctaSection) {
+      luxuryScrollTo(ctaSection.getBoundingClientRect().top + window.scrollY);
+    }
+  });
+}
+
 export { scrollObserver, initScrollAnimations };
 
 // Parallax scrolling for images
