@@ -210,11 +210,8 @@ const handleFormSubmit = async (e) => {
   // Collect form data
   const formData = {
     name: document.getElementById('name').value.trim(),
-    email: document.getElementById('email').value.trim(),
     phone: document.getElementById('phone').value.trim(),
-    company: document.getElementById('company').value.trim(),
-    interest: document.getElementById('interest').value.trim(),
-    consent: document.getElementById('consent').checked
+    interest: document.getElementById('interest').value.trim()
   };
 
   try {
