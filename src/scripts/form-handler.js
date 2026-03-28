@@ -166,8 +166,8 @@ const sendToGoogleSheets = async (formData) => {
   const sheetsUrl = import.meta.env.VITE_GOOGLE_SHEETS_URL;
 
   if (!sheetsUrl) {
-    console.error('Google Sheets URL not configured');
-    throw new Error('Google Sheets configuration missing');
+    // Google Sheets disabled — skip silently
+    return { success: false, skipped: true };
   }
 
   const payload = {
@@ -218,11 +218,8 @@ const handleFormSubmit = async (e) => {
   };
 
   try {
-    // Submit to Resend and Google Sheets in parallel
-    await Promise.all([
-      sendEmailViaResend(formData),
-      sendToGoogleSheets(formData)
-    ]);
+    // Submit via Resend (Google Sheets disabled)
+    await sendEmailViaResend(formData);
 
     document.getElementById('form-success').style.display = 'block';
     form.reset();
