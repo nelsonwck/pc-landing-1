@@ -3,34 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Prime Collective - A private wine society reserved for collectors, connoisseurs, and those who appreciate rare access.">
-  <meta name="keywords" content="wine, membership, private club, collectors, rare wines, luxury">
+  <meta name="description" content="Prime Collective — an exclusive private wine membership in KLCC, Kuala Lumpur. Access rare wine, premium cellar collections, sommelier curation, and members-only events. Membership by invitation.">
+  <meta name="keywords" content="rare wine, premium wine, wine membership, monthly wine, special access, concierge, private wine club, KLCC wine cellar, Kuala Lumpur wine, wine collectors">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://primecollective.asia">
+
+  <!-- Geo Meta Tags (Local SEO) -->
+  <meta name="geo.region" content="MY-14">
+  <meta name="geo.placename" content="Kuala Lumpur">
+  <meta name="geo.position" content="3.1579;101.7116">
+  <meta name="ICBM" content="3.1579, 101.7116">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Prime Collective - A Private World of Wine">
-  <meta property="og:description" content="Reserved for the Few. Membership by invitation only.">
-  <meta property="og:image" content="/og-image.jpg">
+  <meta property="og:site_name" content="Prime Collective">
+  <meta property="og:title" content="Prime Collective — A Private World of Wine">
+  <meta property="og:description" content="An exclusive private wine membership in KLCC. Access rare wines, sommelier curation, and members-only events. Reserved for the few.">
+  <meta property="og:image" content="https://primecollective.asia/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Prime Collective — A Private World of Wine">
+  <meta property="og:url" content="https://primecollective.asia">
+  <meta property="og:locale" content="en_US">
 
-  <title>Prime Collective - A Private World of Wine</title>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prime Collective — A Private World of Wine">
+  <meta name="twitter:description" content="An exclusive private wine membership in KLCC. Access rare wines, sommelier curation, and members-only events.">
+  <meta name="twitter:image" content="https://primecollective.asia/og-image.jpg">
+  <meta name="twitter:image:alt" content="Prime Collective — A Private World of Wine">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <title>Prime Collective — Private Wine Membership in KLCC | Rare Wine &amp; Cellar Access</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicons/favicon.ico" sizes="48x48">
+  <link rel="icon" href="./assets/favicons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/favicons/site.webmanifest">
 
   <!-- Preload critical fonts -->
   <link rel="preload" href="./assets/fonts/agatho/agatho-medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/orpheus-pro/orpheus-pro-regular.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="./styles/main.scss">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://primecollective.asia/#organization",
+        "name": "Prime Collective",
+        "url": "https://primecollective.asia",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://primecollective.asia/assets/logo/pc-logo-stacked.svg",
+          "width": 512,
+          "height": 512
+        },
+        "description": "A private wine membership offering exclusive access to rare wines, a curated cellar of over 10,000 bottles, sommelier curation, and members-only events in KLCC, Kuala Lumpur.",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "KLCC, Kuala Lumpur, Malaysia"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Kuala Lumpur",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Malaysia"
+          }
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://primecollective.asia/#localbusiness",
+        "name": "Prime Collective",
+        "description": "An exclusive private wine society and membership in KLCC, Kuala Lumpur. Over 10,000 bottles across 1,500+ labels from the world's most revered vineyards.",
+        "url": "https://primecollective.asia",
+        "image": "https://primecollective.asia/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kuala Lumpur",
+          "addressRegion": "Kuala Lumpur",
+          "addressCountry": "MY"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 3.1579,
+          "longitude": 101.7116
+        },
+        "priceRange": "$$$$",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Booze Brothers"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://primecollective.asia/#website",
+        "url": "https://primecollective.asia",
+        "name": "Prime Collective",
+        "description": "A Private World of Wine",
+        "publisher": {
+          "@id": "https://primecollective.asia/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://primecollective.asia/#webpage",
+        "url": "https://primecollective.asia",
+        "name": "Prime Collective — Private Wine Membership in KLCC",
+        "description": "An exclusive private wine membership in KLCC, Kuala Lumpur. Access rare wine, premium cellar collections, sommelier curation, and members-only events.",
+        "isPartOf": {
+          "@id": "https://primecollective.asia/#website"
+        },
+        "about": {
+          "@id": "https://primecollective.asia/#organization"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://primecollective.asia/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Prime Collective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prime Collective is an exclusive private wine membership in KLCC, Kuala Lumpur. Members gain access to a curated cellar of over 10,000 bottles across 1,500+ labels from the world's most revered vineyards, including Burgundy Grand Crus, Bordeaux First Growths, and Napa Valley Cult Estates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the benefits of Prime Collective membership?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Members receive dining and wine credits, a Château Laguiole ebony wood opener, a sommelier's quarterly wine selection, a birthday bottle annually, members-only pricing on all bottled wines, priority reservations, personal concierge services, and complimentary wine dinners for two twice per year."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I join Prime Collective?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Membership is by invitation only. Interested individuals can submit their details through the website, and the Prime Collective team will contact you privately to introduce the membership."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Prime Collective located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prime Collective's private cellar is located in KLCC, Kuala Lumpur, Malaysia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What experiences does Prime Collective offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prime Collective offers private dinners with rare wine pairings and renowned chefs, sommelier curation with limited allocations and tailored recommendations, and The Prime Salon — a private dining space for intimate gatherings and exceptional bottles."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <main>
 
   <!-- Hero Section -->
   <section id="hero" class="hero-section">
     <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-content">
-      <img src="./assets/logo/pc-logo-stacked.svg" alt="Prime Collective" class="hero-logo" loading="eager">
+    <header class="hero-content">
+      <h1 class="sr-only">Prime Collective — Exclusive Private Wine Membership in KLCC, Kuala Lumpur</h1>
+      <img src="./assets/logo/pc-logo-stacked.svg" alt="Prime Collective logo" class="hero-logo" loading="eager" width="280" height="280">
       <p class="hero-subheadline">A Private World of Wine</p>
       <p class="hero-tagline">Reserved for the Few.</p>
       <a href="#cta" class="hero-cta-btn">REQUEST MEMBERSHIP</a>
-    </div>
+    </header>
     <button class="scroll-indicator" aria-label="Scroll down" type="button">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -42,7 +206,7 @@
   <section id="cellar" class="cellar-section">
     <div class="cellar-container">
       <div class="cellar-image parallax-image" data-parallax-speed="0.1">
-        <div class="image-placeholder"><img src="./assets/images/main-hero.jpeg" alt="Cellar Image"></div>
+        <div class="image-placeholder"><img src="./assets/images/cellar.jpg" alt="Prime Collective private wine cellar with over 10,000 bottles in KLCC" loading="lazy" width="800" height="600"></div>
       </div>
       <div class="cellar-content">
         <h2 class="section-title fade-in-element">The Region's Most Remarkable Cellar</h2>
@@ -72,23 +236,23 @@
       <div class="experience-grid">
         <div class="experience-column fade-in-stagger">
           <h4>Private Dinners</h4>
-          <div class="column-image"><img src="./assets/images/private-dinners.jpg" alt="Private Dinners" class="parallax-image" data-parallax-speed="0.1"></div>
+          <div class="column-image"><img src="./assets/images/private-dinners.jpg" alt="Exclusive private wine dinner with rare wine pairings and renowned chefs" class="parallax-image" data-parallax-speed="0.1" loading="lazy" width="400" height="500"></div>
           <p class="body-small">Rare wine pairings with renowned chefs and visiting producers — intimate, curated, and by invitation</p>
         </div>
         <div class="experience-column fade-in-stagger">
           <h4>Sommelier Curation</h4>
-          <div class="column-image"><img src="./assets/images/sommelier-curation.jpg" alt="Sommelier Curation" class="parallax-image" data-parallax-speed="0.1"></div>
+          <div class="column-image"><img src="./assets/images/sommelier-curation.jpg" alt="Sommelier curating rare and limited wine allocations for members" class="parallax-image" data-parallax-speed="0.1" loading="lazy" width="400" height="500"></div>
           <p class="body-small">Access to limited allocations and tailored recommendations from our sommelier team.</p>
         </div>
         <div class="experience-column fade-in-stagger">
           <h4>The Prime Salon</h4>
-          <div class="column-image"><img src="./assets/images/prime-salon.png" alt="The Prime Salon" class="parallax-image" data-parallax-speed="0.1"></div>
+          <div class="column-image"><img src="./assets/images/prime-salon.png" alt="The Prime Salon private dining space for intimate wine gatherings" class="parallax-image" data-parallax-speed="0.1" loading="lazy" width="400" height="500"></div>
           <p class="body-small">A private dining space for intimate gatherings and exceptional bottles.</p>
         </div>
       </div>
 
       <div class="experience-image parallax-image" data-parallax-speed="0.1">
-        <div class="image-placeholder"><img src="./assets/images/cheers.jpg" alt="Intimate Dining" ></div>
+        <div class="image-placeholder"><img src="./assets/images/cheers.jpg" alt="Members enjoying premium wines at an intimate Prime Collective gathering" loading="lazy" width="1200" height="800"></div>
       </div>
 
       <p class="whisper center">The finest wines are not discovered alone. They are revealed within the Collective.</p>
@@ -111,7 +275,7 @@
             <p class="benefit-group-title">Welcome Gift</p>
             <div class="benefit-item">
               <div class="benefit-icon"></div>
-              <p class="benefit-text">One bottle of <strong>Château Pétrus</strong></p>
+              <p class="benefit-text"><strong>Dining & wine credits</strong> at Smith & Wollensky and Prime Collective</p>
             </div>
             <div class="benefit-item">
               <div class="benefit-icon"></div>
@@ -130,7 +294,7 @@
             </div>
             <div class="benefit-item">
               <div class="benefit-icon"></div>
-              <p class="benefit-text"><strong>Members-only pricing</strong> for all bottled wines at Smith &amp; Wollensky KL and Prime Collective establishments</p>
+              <p class="benefit-text"><strong>Members-only pricing</strong> for all bottled wines</p>
             </div>
             <div class="benefit-item">
               <div class="benefit-icon"></div>
@@ -191,10 +355,12 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <img class="footer-logo" src="./assets/logo/pc-logo-horizontal.svg" alt="Prime Collective">
+      <img class="footer-logo" src="./assets/logo/pc-logo-horizontal.svg" alt="Prime Collective logo" loading="lazy" width="200" height="40">
       <p class="footer-management">Managed by Booze Brothers</p>
       <p class="footer-copyright">&copy; 2026 Booze Brothers. All rights reserved.</p>
     </div>

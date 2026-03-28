@@ -1,0 +1,16 @@
+# Prime Collective — robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Allow AI crawlers for AEO visibility
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://primecollective.asia/sitemap.xml

@@ -1,10 +1,19 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
+import imageCompressPlugin from './vite-plugin-image-compress.mjs';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
+  plugins: [
+    imageCompressPlugin({
+      maxWidth: 2560,
+      jpegQuality: 80,
+      pngQuality: 80,
+      verbose: true,
+    }),
+  ],
   root: 'src',
   build: {
     outDir: '../dist',

@@ -284,6 +284,7 @@ section {
 
     span {
       font-size: 11px;
+      width: 100%;
 
       &:not(:last-child)::after {
         margin-left: $space-sm;
