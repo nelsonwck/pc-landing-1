@@ -5,10 +5,18 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server.js",
+    "provision:gcp": "bash scripts/provision-gcp.sh",
+    "deploy:vercel": "bash scripts/deploy.sh --target vercel --prod",
+    "deploy:gcp": "bash scripts/deploy.sh --target gcp",
+    "deploy:all": "bash scripts/deploy.sh --target all"
   },
   "engines": {
     "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

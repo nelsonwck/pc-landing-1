@@ -112,3 +112,37 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// Smooth gradient fade at top of section (blends from previous section's bg)
+@mixin section-fade-top($from-color, $height: 160px) {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $height;
+  background: linear-gradient(to bottom, $from-color, transparent);
+  pointer-events: none;
+  z-index: 2;
+
+  @include mobile {
+    height: $height * 0.6;
+  }
+}
+
+// Smooth gradient fade at bottom of section (blends into next section's bg)
+@mixin section-fade-bottom($to-color, $height: 160px) {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $height;
+  background: linear-gradient(to top, $to-color, transparent);
+  pointer-events: none;
+  z-index: 2;
+
+  @include mobile {
+    height: $height * 0.6;
+  }
+}

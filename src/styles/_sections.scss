@@ -32,6 +32,12 @@ section {
     pointer-events: none;
     z-index: $z-base + 1;
   }
+
+  // Smooth fade into cellar section
+  &::after {
+    @include section-fade-bottom($rich-charcoal, 200px);
+    z-index: $z-base + 1;
+  }
 }
 
 // Parallax background layer for the hero
@@ -182,6 +188,11 @@ section {
   background-color: $rich-charcoal;
   padding: $space-xxl 0;
 
+  // Smooth fade from hero's deep-black
+  // &::before {
+    // @include section-fade-top($deep-black);
+  // }
+
   @include mobile {
     padding: $space-xl 0;
   }
@@ -298,6 +309,11 @@ section {
 .experience-section {
   background-color: $deep-black;
   padding: $space-xxl 0;
+
+  // Smooth fade from cellar's rich-charcoal
+  &::before {
+    @include section-fade-top($rich-charcoal);
+  }
 
   @include mobile {
     padding: $space-xl 0;
@@ -438,6 +454,22 @@ section {
     z-index: 1;
   }
 
+  // Smooth fade from experience's deep-black at top, into CTA's deep-black at bottom
+  // Single ::after handles both edges since ::before is used for monogram
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      $deep-black 0%,
+      transparent 160px,
+      transparent calc(100% - 160px),
+      $deep-black 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
   @include mobile {
     padding: $space-xl 0;
   }
@@ -545,6 +577,11 @@ section {
 .cta-section {
   background-color: $deep-black;
   padding: $space-xxl 0;
+
+  // Smooth fade from membership's rich-charcoal
+  // &::before {
+    // @include section-fade-top($rich-charcoal);
+  // }
 
   @include mobile {
     padding: $space-xl 0;
