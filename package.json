@@ -7,6 +7,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
