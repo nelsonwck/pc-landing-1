@@ -259,7 +259,7 @@ section {
 
   span {
     font-size: 12px;
-    color: $slate;
+    color: $silver;
     opacity: 0.6;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -585,6 +585,44 @@ section {
     color: $silver;
     margin-bottom: $space-xs;
     letter-spacing: 0.02em;
+  }
+
+  .name-input-group {
+    display: flex;
+    gap: 8px;
+  }
+
+  .salutation-select {
+    flex-shrink: 0;
+    width: auto;
+    padding: $space-xs 28px $space-xs $space-xs;
+    background-color: $rich-charcoal;
+    border: 1px solid $carbon;
+    border-radius: 4px;
+    color: $cream;
+    font-family: $font-body;
+    font-size: 16px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23B8B8B8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    transition: border-color $transition-base, box-shadow $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $prime-gold;
+      box-shadow: 0 0 0 3px rgba($prime-gold, 0.1);
+    }
+    &:focus-visible {
+      outline: 2px solid $prime-gold;
+      outline-offset: 2px;
+    }
+  }
+
+  .name-input-group input {
+    flex: 1;
+    min-width: 0;
   }
 
   input,

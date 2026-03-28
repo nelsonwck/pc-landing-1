@@ -321,8 +321,20 @@
 
       <form id="membership-form" class="membership-form">
         <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required aria-required="true">
+          <label for="name">Full Name <em>as per ID</em> *</label>
+          <div class="name-input-group">
+            <select id="salutation" name="salutation" class="salutation-select">
+              <option value="Mr" selected>Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Ms">Ms</option>
+              <option value="Datuk">Datuk</option>
+              <option value="Datin">Datin</option>
+              <option value="Dato">Dato</option>
+              <option value="Datuk Seri">Datuk Seri</option>
+              <option value="Dato Sri">Dato Sri</option>
+            </select>
+            <input type="text" id="name" name="name" required aria-required="true">
+          </div>
           <span class="error-message" id="name-error"></span>
         </div>
 

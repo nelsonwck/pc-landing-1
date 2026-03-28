@@ -56,6 +56,11 @@
 }
 
 // Whisper character reveal animation
+.whisper-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .whisper-char {
   display: inline-block;
   opacity: 0;

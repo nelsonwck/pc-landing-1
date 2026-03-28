@@ -243,9 +243,10 @@ const initWhisperReveal = () => {
   whisperElements.forEach(whisper => {
     const text = whisper.textContent.trim();
     whisper.textContent = '';
-    whisper.innerHTML = text.split('').map(char => {
-      return char === ' ' ? '<span class="whisper-char">&nbsp;</span>' : `<span class="whisper-char">${char}</span>`;
-    }).join('');
+    whisper.innerHTML = text.split(' ').map(word => {
+      const chars = word.split('').map(char => `<span class="whisper-char">${char}</span>`).join('');
+      return `<span class="whisper-word">${chars}</span>`;
+    }).join('<span class="whisper-char">&nbsp;</span>');
 
     whisper.dataset.revealed = 'false';
   });

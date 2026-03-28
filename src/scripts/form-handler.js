@@ -126,8 +126,10 @@ const handleFormSubmit = async (e) => {
   document.getElementById('form-error').style.display = 'none';
 
   // Collect form data
+  const salutation = document.getElementById('salutation').value;
+  const rawName = document.getElementById('name').value.trim();
   const formData = {
-    name: document.getElementById('name').value.trim(),
+    name: `${salutation} ${rawName}`,
     phone: document.getElementById('phone').value.trim(),
     interest: document.getElementById('interest').value.trim()
   };
