@@ -586,6 +586,11 @@ section {
     color: $silver;
     margin-bottom: $space-xs;
     letter-spacing: 0.02em;
+    
+    em {
+      font-size: 12px;
+      opacity: 0.75;
+    }
   }
 
   .name-input-group {
