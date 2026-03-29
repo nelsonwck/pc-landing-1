@@ -47,7 +47,7 @@ export default async function handler(req, res) {
       <div class="field"><div class="label">Name:</div><div>${escapeHtml(name.trim())}</div></div>
       <div class="field"><div class="label">Phone:</div><div>${escapeHtml(phone.trim())}</div></div>
       <div class="field"><div class="label">Wine Preferences:</div><div>${escapeHtml(interest?.trim() || 'Not provided')}</div></div>
-      <div class="field"><div class="label">Submitted:</div><div>${new Date().toLocaleString()}</div></div>
+      <div class="field"><div class="label">Submitted:</div><div>${new Date().toLocaleString('en-MY', { timeZone: 'Asia/Kuala_Lumpur' })}</div></div>
       <hr>
       <p class="footer">This inquiry was submitted via the Prime Collective landing page.</p>
     </body>
