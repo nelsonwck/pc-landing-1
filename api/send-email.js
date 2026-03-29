@@ -4,12 +4,16 @@ export default async function handler(req, res) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const recipient = process.env.EMAIL_RECIPIENT;
+  const recipientRaw = process.env.EMAIL_RECIPIENT;
+  const bccRaw = process.env.EMAIL_BCC;
 
-  if (!apiKey || !recipient) {
+  if (!apiKey || !recipientRaw) {
     console.error('RESEND_API_KEY or EMAIL_RECIPIENT not set in environment');
     return res.status(500).json({ error: 'Server email configuration missing' });
   }
+
+  const recipients = recipientRaw.split(',').map(e => e.trim()).filter(Boolean);
+  const bcc = bccRaw ? bccRaw.split(',').map(e => e.trim()).filter(Boolean) : [];
 
   const { name, phone, interest } = req.body || {};
 
@@ -59,7 +63,8 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'Prime Collective <onboarding@resend.dev>',
-        to: [recipient],
+        to: recipients,
+        ...(bcc.length > 0 && { bcc }),
         subject: 'New Membership Inquiry - Prime Collective',
         html: emailHtml,
       }),
