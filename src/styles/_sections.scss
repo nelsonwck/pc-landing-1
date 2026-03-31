@@ -274,8 +274,10 @@ section {
     opacity: 0.75;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    width: 210px;
 
     &:not(:last-child)::after {
+      display:none;
       content: '|';
       margin-left: $space-md;
       color: $carbon;
