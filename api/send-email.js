@@ -62,7 +62,7 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: 'Prime Collective <onboarding@resend.dev>',
+        from: 'Prime Collective <website@primecollective.asia>',
         to: recipients,
         ...(bcc.length > 0 && { bcc }),
         subject: 'New Membership Inquiry - Prime Collective',
