@@ -3,12 +3,7 @@ console.log('Analytics module loaded');
 
 // Initialize GA4
 export const initGA4 = () => {
-  const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID;
-
-  if (!measurementId || measurementId === 'G-XXXXXXXXXX') {
-    console.warn('GA4 Measurement ID not configured');
-    return;
-  }
+  const measurementId = 'G-RCLBDCLXGP';
 
   // Load gtag script dynamically
   const script = document.createElement('script');
