@@ -88,6 +88,20 @@ if (form) {
     }
   });
 
+  // Conditional reference field: show when introduction is "Existing member" or "Private invitation"
+  const introductionSelect = document.getElementById('introduction');
+  const referenceGroup = document.getElementById('reference-group');
+  if (introductionSelect && referenceGroup) {
+    introductionSelect.addEventListener('change', () => {
+      const showReference = ['Existing member', 'Private invitation'].includes(introductionSelect.value);
+      referenceGroup.style.display = showReference ? '' : 'none';
+      if (!showReference) {
+        const refField = document.getElementById('reference');
+        if (refField) refField.value = '';
+      }
+    });
+  }
+
 }
 
 export { validateForm, validateField, showError, clearError };
@@ -131,7 +145,9 @@ const handleFormSubmit = async (e) => {
   const formData = {
     name: `${salutation} ${rawName}`,
     phone: document.getElementById('phone').value.trim(),
-    interest: document.getElementById('interest').value.trim()
+    interest: document.getElementById('interest').value.trim(),
+    introduction: document.getElementById('introduction').value || '',
+    reference: document.getElementById('reference').value.trim()
   };
 
   try {
@@ -139,6 +155,9 @@ const handleFormSubmit = async (e) => {
 
     document.getElementById('form-success').style.display = 'block';
     form.reset();
+    // Hide reference group after reset
+    const refGroup = document.getElementById('reference-group');
+    if (refGroup) refGroup.style.display = 'none';
 
     // Track conversion in GA4
     if (window.gtag) {

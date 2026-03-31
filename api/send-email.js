@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   const recipients = recipientRaw.split(',').map(e => e.trim()).filter(Boolean);
   const bcc = bccRaw ? bccRaw.split(',').map(e => e.trim()).filter(Boolean) : [];
 
-  const { name, phone, interest } = req.body || {};
+  const { name, phone, interest, introduction, reference } = req.body || {};
 
   if (!name || !name.trim() || !phone || !phone.trim()) {
     return res.status(400).json({ error: 'Name and phone are required' });
@@ -47,6 +47,8 @@ export default async function handler(req, res) {
       <div class="field"><div class="label">Name:</div><div>${escapeHtml(name.trim())}</div></div>
       <div class="field"><div class="label">Phone:</div><div>${escapeHtml(phone.trim())}</div></div>
       <div class="field"><div class="label">Wine Preferences:</div><div>${escapeHtml(interest?.trim() || 'Not provided')}</div></div>
+      <div class="field"><div class="label">Introduced via:</div><div>${escapeHtml(introduction?.trim() || 'Not provided')}</div></div>
+      ${reference?.trim() ? `<div class="field"><div class="label">Reference:</div><div>${escapeHtml(reference.trim())}</div></div>` : ''}
       <div class="field"><div class="label">Submitted:</div><div>${new Date().toLocaleString('en-MY', { timeZone: 'Asia/Kuala_Lumpur' })}</div></div>
       <hr>
       <p class="footer">This inquiry was submitted via the Prime Collective landing page.</p>
