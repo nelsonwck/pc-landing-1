@@ -4,6 +4,7 @@ console.log('Analytics module loaded');
 // Initialize GA4
 export const initGA4 = () => {
   const measurementId = 'G-RCLBDCLXGP';
+  const measurementId2 = 'AW-18124588366';
 
   // Load gtag script dynamically
   const script = document.createElement('script');
@@ -20,8 +21,11 @@ export const initGA4 = () => {
   gtag('config', measurementId, {
     send_page_view: true
   });
-
   console.log('GA4 initialized:', measurementId);
+  gtag('config', measurementId2, {
+    send_page_view: true
+  });
+  console.log('GA4 initialized:', measurementId2);
 };
 
 // Scroll depth tracking
